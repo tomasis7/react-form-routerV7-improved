@@ -8,6 +8,7 @@ const Nav = styled("nav")`
 const StyledLink = styled(Link)`
   margin-right: 1rem;
   text-decoration: none;
+  font-size: 2.2rem;
   color: #333;
   padding: 0.5rem;
 
