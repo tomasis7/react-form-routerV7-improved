@@ -6,6 +6,9 @@
 html,
 body {
   background-color: white;
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
 }
 
 @media (prefers-color-scheme: dark) {

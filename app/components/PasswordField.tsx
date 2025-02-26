@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { FieldError, UseFormRegister } from "react-hook-form";
+import { useState } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -31,17 +30,7 @@ const ErrorText = styled.p`
   font-size: 0.75rem;
 `;
 
-interface PasswordFieldProps {
-  name: string;
-  register: UseFormRegister<any>;
-  error?: FieldError | string;
-}
-
-const PasswordField: React.FC<PasswordFieldProps> = ({
-  name,
-  register,
-  error,
-}) => {
+const PasswordField = ({ name, register, error }: any) => {
   const [strength, setStrength] = useState(0);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -55,11 +44,7 @@ const PasswordField: React.FC<PasswordFieldProps> = ({
       <Label>Lösenord</Label>
       <Input {...register(name)} type="password" onChange={handleChange} />
       <StrengthBar strength={strength} />
-      {error && (
-        <ErrorText>
-          {typeof error === "string" ? error : error.message}
-        </ErrorText>
-      )}
+      {error && <ErrorText>{error}</ErrorText>}
     </Wrapper>
   );
 };
