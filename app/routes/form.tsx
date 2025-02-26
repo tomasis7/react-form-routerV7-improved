@@ -1,4 +1,4 @@
-import type { Route } from "../+types/form";
+import type { Route } from "../+types/root";
 import Form from "../components/Form";
 import Navigation from "../components/Navigation";
 
@@ -11,9 +11,9 @@ export function meta({}: Route.MetaArgs) {
 
 export default function FormPage() {
   return (
-    <div className="p-4">
+    <div>
       <Navigation />
-      <h1 className="text-2xl font-bold mb-4">Registreringsformulär</h1>
+      <h1>Registreringsformulär</h1>
       <Form />
     </div>
   );

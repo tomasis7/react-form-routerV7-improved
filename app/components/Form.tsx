@@ -1,12 +1,12 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import * as yup from "yup";
+import PasswordField from "../components/PasswordField";
+import SubmitButton from "../components/SubmitButton";
 import { useUserStore } from "../store/userStore";
 import InputField from "./InputField";
-import PasswordField from "./PasswordField";
-import SubmitButton from "./SubmitButton";
 
 interface FormData {
   name: string;

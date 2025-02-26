@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { Route } from "../+types/profile";
+import type { Route } from "../+types/root";
 import Navigation from "../components/Navigation";
 import { useUserStore } from "../store/userStore";
 
@@ -46,19 +46,18 @@ export default function ProfilePage() {
   };
 
   return (
-    <div className="p-4">
+    <div>
       <Navigation />
-      <h1 className="text-2xl font-bold mb-4">Registered Users</h1>
+      <h1>Registered Users</h1>
       {users.length === 0 ? (
         <p>No users found.</p>
       ) : (
-        <ul className="space-y-4">
+        <ul>
           {users.map((user: User) => (
-            <li key={user.id} className="p-3 border rounded-md">
+            <li key={user.id}>
               {editingId === user.id ? (
-                <div className="flex flex-col space-y-2">
+                <div>
                   <input
-                    className="border p-1 rounded"
                     type="text"
                     value={editedUser.name}
                     onChange={(e) =>
@@ -66,38 +65,22 @@ export default function ProfilePage() {
                     }
                   />
                   <input
-                    className="border p-1 rounded"
                     type="email"
                     value={editedUser.email}
                     onChange={(e) =>
                       setEditedUser({ ...editedUser, email: e.target.value })
                     }
                   />
-                  <button
-                    className="bg-blue-500 text-white px-2 py-1 rounded"
-                    onClick={handleUpdate}
-                  >
-                    Update
-                  </button>
+                  <button onClick={handleUpdate}>Update</button>
                 </div>
               ) : (
-                <div className="flex justify-between items-center">
+                <div>
                   <span>
                     <strong>{user.name}</strong> - {user.email}
                   </span>
                   <div>
-                    <button
-                      className="mr-2 bg-yellow-500 text-white px-2 py-1 rounded"
-                      onClick={() => handleEdit(user)}
-                    >
-                      Edit
-                    </button>
-                    <button
-                      className="bg-red-500 text-white px-2 py-1 rounded"
-                      onClick={() => deleteUser(user.id)}
-                    >
-                      Delete
-                    </button>
+                    <button onClick={() => handleEdit(user)}>Edit</button>
+                    <button onClick={() => deleteUser(user.id)}>Delete</button>
                   </div>
                 </div>
               )}

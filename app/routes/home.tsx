@@ -1,4 +1,4 @@
-import type { Route } from "../+types/home";
+import type { Route } from "../+types/root";
 import Navigation from "../components/Navigation";
 
 export function meta({}: Route.MetaArgs) {
@@ -10,16 +10,16 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <div className="p-4">
+    <div>
       <Navigation />
-      <h1 className="text-2xl font-bold mb-4">Welcome to My Form App</h1>
-      <p className="mb-4">
+      <h1>Welcome to My Form App</h1>
+      <p>
         This application demonstrates form handling and CRUD operations using
         React and the React Router library.
       </p>
-      <div className="bg-gray-100 p-4 rounded-md">
-        <p className="font-medium">Features:</p>
-        <ul className="list-disc list-inside">
+      <div>
+        <p>Features:</p>
+        <ul>
           <li>User registration with form validation</li>
           <li>Display list of users</li>
           <li>Update and delete user information</li>
